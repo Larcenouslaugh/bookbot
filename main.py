@@ -3,8 +3,12 @@ def main():
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     char_num  = get_char_num(text)
+    sort_char = sorted(char_num.items(),reverse=True, key= sort_let)
     print(f"{num_words} words found in the document")
-    print(char_num)
+    print(sort_char)
+    
+    
+
 
 def get_num_words(text):
     words = text.split()
@@ -21,6 +25,9 @@ def get_char_num(text):
         if char in letters:
             letter_count[char] += 1
     return letter_count
+
+def sort_let(char_num):
+    return char_num[1]
 
 main()
 
