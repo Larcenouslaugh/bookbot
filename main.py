@@ -4,7 +4,9 @@ def main():
     num_words = get_num_words(text)
     char_num  = get_char_num(text)
     sort_char = dict(sorted(char_num.items(),reverse=True, key= sort_let))
+    print(f"--- Begin report of {book_path} ---")
     print(f"{num_words} words found in the document")
+    print()
     for key in sort_char:
         print(f"The '{key}' character was found {sort_char[key]} times")
 
