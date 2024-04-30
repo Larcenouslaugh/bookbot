@@ -3,12 +3,10 @@ def main():
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     char_num  = get_char_num(text)
-    sort_char = sorted(char_num.items(),reverse=True, key= sort_let)
+    sort_char = dict(sorted(char_num.items(),reverse=True, key= sort_let))
     print(f"{num_words} words found in the document")
-    print(sort_char)
-    
-    
-
+    for key in sort_char:
+        print(f"The '{key}' character was found {sort_char[key]} times")
 
 def get_num_words(text):
     words = text.split()
